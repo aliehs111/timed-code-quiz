@@ -20,21 +20,37 @@
       will penalize your score time by ten seconds!</p>
     <button id="start"> Start Quiz </button>
   </div>
-  <div class="quiz-container">
+  <div class="quiz-container" id="quest-answ">
     <h2>Question</h2>
-  <section class="=answerbtn">
-      <button>Answer1</button>
-      <button>Answer2</button>
-      <button>Answer3</button>
-      <button>Answer4</button>
-  </section>
+  <div class="questcontainer">
+      <button type=submit class="answopt-cor" value="true">method</button><br>
+      <button type=submit class="answopt" value="false">array</button><br>
+      <button type=submit class="answopt" value="false">function</button><br>
+      <button type=submit class="answopt" value="false">query</button><br>
+  </div>
   </div>
     <footer>
-      <p class="correct">Correct! Great Job!</p>
-      <p class="wrong">Wrong - Keep Practicing!</p>
+      <p id="correct">Correct! Great Job!</p>
+      <p id="wrong">Wrong...Keep Practicing!</p>
     </footer>
 
-  
+  <div class="finito">
+    <h2>All Done!</h2>
+    <p>Your final score is</p>
+    <form>Enter initials</form>
+    <button>Submit</button>
+  </div>
+
+  <div class="highscores">
+    <h1>High Scores</h1>
+    <form>initials-highscore</form>
+    <button>Go Back</button>
+    <button>Clear High Scores</button>
+
+  </div>
+
+
+
 
 
   <script src="script.js"></script>
