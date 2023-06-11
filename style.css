@@ -71,7 +71,7 @@ h2 {
   /* float: left; */
 }
 
-.answopt, .answopt-cor {
+#options {
   
   display: inline-block;
   outline: 0;
