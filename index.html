@@ -10,37 +10,55 @@
 </head>
 
 <body>
-  <div id="starting-view">
-  <header>
-    <p class="topleft">View Highscores</p>
-    <p class="topright">Time:</p>
-    <p id="timer"></p>
-  </header>
-  <div class="container">
-    <h1>Coding Quiz Challenge</h1>
-    <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
-      will penalize your score time by ten seconds!</p>
-    <button id="start"> Start Quiz </button>
-</div>
 
-  </div>
-  <div class="quiz-container" id="quest-answ">
+<!---div for starting View---->
+<div id="starting-view">
+
+  <header>
+    <div class="highscorebtn">
+      <a href="highscores.html"><button class=scores-header id="view-high-scores">View High Scores</button></a>
+    </div> 
+    <div class="timer">
+      <p>Time:<span id="timer"></span></p>
+    </div>  
+  </header>
+
+  <div class="container">
+    <div id="quiz-start">
+      <div class = "landing" id="start-screen">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+          will penalize your score time by ten seconds!</p>
+        <button id="start"> Start Quiz </button>  
+      </div>
+    </div>  
+  </div>  
+</div>
+  
+   
+<!---div for question and answer options---->
+  <div id="quest-answ" id="hide" id ="options">
+  <!-- <div class="quiz-container" id="quest-answ"> -->
     <h2 id="question"></h2>
   <div class="questcontainer" id="options"></div>
   </div>
 
-    <footer id="quizresponse">
-      <p id="correct" data-state="hidden">Correct! Great Job!</p>
-      <p id="wrong" data-state="hidden">Wrong...Keep Practicing!</p>
-    </footer>
+<!---div for quiz responses right and wrong--->
+    <div id="quizresponse">
+      <p id="correct" data-state="hidden"></p>
+      <p id="wrong" data-state="hidden"></p>
+    </div>
 
-  <div id="finito" class="endingquiz">
+<!---div for quiz end and scores--->
+  <div id="finito" class="endingquiz" class="hide">
     <h2>All Done!</h2>
-    <p>Your final score is</p>
-    <form id="enterinit">Enter initials</form>
+    <p>Your final score is <span id="score-final"></span></p>
+    <p>Please enter your initials <input type="text" id="enterinit" />
     <button id="initials">Submit</button>
+    </p>
   </div>
 
+  <!---div for last view with high scores and initials--->
   <div class="highscores">
     <h1>High Scores</h1>
     <form>initials-highscore</form>

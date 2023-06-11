@@ -1,73 +1,43 @@
 
-//from landing page to start quiz
-let startBtn = document.querySelector('#start');
-startBtn.addEventListener('click', function(){
-    document.querySelector('.container').style.display='none';
-    document.querySelector('.finito').style.display='none';
-    document.querySelector('.highscores').style.display='none';
-    document.querySelector('.quiz-container').style.display='block';
-    timerID = setInterval(outofTime, 1000);
-    timerEl.textContent = time;
-    let firstViewEl = document.getElementById('#starting-view');
-    firstViewEl.setAttribute("class", "hide");
-    mainQuizEl.removeAttribute("class");
-    nextQuestion();
 
-})
 
 //quiz questions in array 
 let quizQuestions = [ 
 
 {   
     numb: 1,
-    h1says: 'A group of key/value pairs is called a(n) _____',
+    h2says: 'A group of key/value pairs is called a(n) _____',
     options: ['function', 'array', 'method', 'object'],
     answer: 'object'
 },
 
 {
     numb: 2,
-    h1says: 'In a function, the keyword "this" refers to a(n)______',
+    h2says: 'In a function, the keyword "this" refers to a(n)______',
     options: ['function', 'array', 'method', 'object'],
     answer: 'object'
 },
 
 {
     numb: 3,
-    h1says: 'An object property containing a definition is a _____',
+    h2says: 'An object property containing a definition is a _____',
     options: ['function', 'array', 'method', 'object'],
     answer: 'method'
 },
 
 {
     numb: 4,
-    h1says: 'This is used to store multiple values in a single variable',
+    h2says: 'This is used to store multiple values in a single variable',
     options: ['function', 'array', 'method', 'object'],
     answer: 'array'
 },
 
 {
     numb: 5,
-    h1says: 'A parameter is a named variable passed into a ______',
+    h2says: 'A parameter is a named variable passed into a ______',
     options: ['function', 'array', 'method', 'object'],
     answer: 'function'
 }];
-
-
-
-
-// let questionEl = document.getElementById('question');
-// let answOption = document.getElementById('options');
-// let timeEl = document.getElementById('time');
-
-
-//define starting point to reference indexes in quesiton array and timer
-
-let thisQuestionIndex = 0;
-let time = quizQuestions.length * 15;
-let timerID;
-
-
 
 //set up running list of global variables///
 let mainQuizEl = document.querySelector('#quest-answ');
@@ -81,14 +51,46 @@ let msgWrong = document.querySelector('#wrong');
 let msgCorrect = document.querySelector('#correct');
 let restart = document.querySelector('#restart');
 let clearScore = document.querySelector('#clear');
+let answOption = document.getElementById('options');
+let timeEl = document.getElementById('time');
 
+//define starting point to reference indexes in quesiton array and timer
+
+let thisQuestionIndex = 0;
+let time = quizQuestions.length * 15;
+let timerID;
+
+
+
+
+//from landing page to start quiz
+let startBtn = document.querySelector('#start');
+startBtn.addEventListener('click', function(){
+    document.querySelector('.container').style.display='none';
+    document.querySelector('#finito').style.display='none';
+    document.querySelector('.highscores').style.display='none';
+    document.querySelector('#quest-answ').style.display='block';
+
+} )
+
+//start quiz
+
+// function quizStart() {
+//     timerID = setInterval(outofTime, 1000);
+//     scoreEl.textContent = time;
+//     let firstViewEl = document.querySelector('.container');
+//     firstViewEl.setAttribute("class", "hide");
+//     mainQuizEl.removeAttribute("class");
+//     nextQuestion();
+
+// }
 
 
 //function to loop through questions and options
 function nextQuestion(){
     let thisQuestion = quizQuestions[thisQuestionIndex];
-    let h1Question = document.getElementById('#question');
-    h1Question.textContent = thisQuestion.h1says;
+    let h2Question = document.getElementById('question');
+    h2Question.textContent = thisQuestion.h2says;
     answOptions.innerHTML = "";
     thisQuestion.options.forEach(function(choice, i) {
         let choiceBtn = document.createElement("button");
@@ -165,12 +167,7 @@ function checkForEnter(event) {
         saveScore();
 
     }
-}
+};
 
-userInitials.onkeyup = checkForEnter;
-
-
-//save user score after clicking submit
-
-userSubmit.onclick = saveScore
+// userInitials.onkeyup = checkForEnter
 
