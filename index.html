@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <div id="starting-view">
   <header>
     <p class="topleft">View Highscores</p>
     <p class="topright">Time:</p>
@@ -20,33 +21,31 @@
     <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
       will penalize your score time by ten seconds!</p>
     <button id="start"> Start Quiz </button>
+</div>
+
   </div>
   <div class="quiz-container" id="quest-answ">
     <h2 id="question"></h2>
-  <div class="questcontainer">
-      <button type=submit id="options"></button><br>
-      <button type=submit id="options"></button><br>
-      <button type=submit id="options"></button><br>
-      <button type=submit id="options"></button><br>
+  <div class="questcontainer" id="options"></div>
   </div>
-  </div>
-    <footer>
+
+    <footer id="quizresponse">
       <p id="correct" data-state="hidden">Correct! Great Job!</p>
       <p id="wrong" data-state="hidden">Wrong...Keep Practicing!</p>
     </footer>
 
-  <div class="finito">
+  <div id="finito" class="endingquiz">
     <h2>All Done!</h2>
     <p>Your final score is</p>
-    <form>Enter initials</form>
-    <button>Submit</button>
+    <form id="enterinit">Enter initials</form>
+    <button id="initials">Submit</button>
   </div>
 
   <div class="highscores">
     <h1>High Scores</h1>
     <form>initials-highscore</form>
-    <button>Go Back</button>
-    <button>Clear High Scores</button>
+    <button id="restart">Go Back</button>
+    <button id="clear">Clear High Scores</button>
 
   </div>
 
