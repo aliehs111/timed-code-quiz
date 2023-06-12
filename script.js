@@ -43,7 +43,7 @@ let quizQuestions = [
 let mainQuizEl = document.querySelector('#quest-answ');
 let answOptionsEl = document.querySelector('#options');
 let scoreEl = document.querySelector('#timer');
-let questionEl = document.querySelector('#pregunta');
+let questionEl = document.querySelector('#question');
 let userSubmit = document.querySelector('#nombre')
 let userInitials = document.querySelector('#enterinit')
 let quizResponse = document.querySelector('#repuesta');
@@ -62,7 +62,6 @@ let timerID;
 
 
 
-
 //from landing page to start quiz
 
 
@@ -70,25 +69,28 @@ let startBtn = document.querySelector('#start');
 startBtn.addEventListener('click', function(){
     document.querySelector('#principio').style.display='none';
     document.querySelector('#finito').style.display='none';
-    document.querySelector('.highscores').style.display='none';
+    document.querySelector('#highscores').style.display='none';
     document.querySelector('#pregunta').style.display='block';
-    // newQuestion();
+    newQuestion();
 } )
 
 //function to get array into div with buttons//
 function newQuestion(){
-    let thisQuestion = quizQuestions[thisQuestionIndex];
-    let askEl = document.getElementById('pregunta');
-    answOptionsEl.innerHTML = "";
-    thisQuestionIndex.options.any(choice, i);
+    let thisQuestion = quizQuestions[thisQuestionIndex].h2says;
+    // let askEl = document.getElementById('pregunta');
+    questionEl.innerHTML = thisQuestion;
+    let theseAnswers = quizQuestions[thisQuestionIndex].options;
+
+    for(let i = 0; theseAnswers.length > i; i++) {
         let choiceBtn = document.createElement("button");
-        choiceBtn.setAttribute("value", choice);
-        choiceBtn.textContent = i + 1 + ". " + choice;
+        choiceBtn.setAttribute("value", theseAnswers[i]);
+        choiceBtn.textContent = theseAnswers[i];
         choiceBtn.onclick = ansewerClick;
         answOptionsEl.appendChild(choiceBtn);
     }
+  
+}      
 
-        
 
 
 // let userAnsw = document.querySelector('.optansw');

@@ -32,10 +32,10 @@ h1 {
   font-size: 50px;
 }
 
-.timer {
-  position: absolute;
-  top: 15px;
-  right: 200px;
+#timer {
+  position:fixed;
+  top: 5px;
+  right: 300px;
 }
 
 #principio, #finito {
