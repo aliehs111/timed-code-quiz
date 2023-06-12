@@ -14,30 +14,31 @@
 <!---div for starting View---->
 <div id="starting-view">
 
-  <header>
+  <section>
     <div class="highscorebtn">
       <a href="highscores.html"><button class=scores-header id="view-high-scores">View High Scores</button></a>
     </div> 
     <div class="timer">
       <p>Time:<span id="timer"></span></p>
     </div>  
-  </header>
+  </section>
 
-  <div class="container">
-    <div id="quiz-start">
+
+    <section id="quiz-start" class="container">
       <div class = "landing" id="start-screen">
         <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+        <p>Try to answer the following code-related questions within the time limit. Your total score will be the time left on the timer when you finish.  Keep in mind that incorrect answers
           will penalize your score time by ten seconds!</p>
         <button id="start"> Start Quiz </button>  
       </div>
-    </div>  
-  </div>  
-</div>
+    </section>  
+</div>    
+
+
   
    
 <!---div for question and answer options---->
-  <div id="quest-answ" id="hide" id ="options">
+  <div id="quest-answ">
   <!-- <div class="quiz-container" id="quest-answ"> -->
     <h2 id="question"></h2>
   <div class="questcontainer" id="options"></div>

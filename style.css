@@ -54,7 +54,7 @@ h1 {
   text-align: center;
 }
 
-.quiz-container, #quizresponse, .highscores {
+#quizresponse, .highscores {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,7 +94,7 @@ h2 {
   /* float: left; */
 }
 
-#options {
+#button1, #button2, #button3, #button4 {
   
   display: inline-block;
   outline: 0;

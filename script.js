@@ -51,7 +51,7 @@ let msgWrong = document.querySelector('#wrong');
 let msgCorrect = document.querySelector('#correct');
 let restart = document.querySelector('#restart');
 let clearScore = document.querySelector('#clear');
-let answOption = document.getElementById('options');
+let answOption = document.getElementById('quest-answ');
 let timeEl = document.getElementById('time');
 
 //define starting point to reference indexes in quesiton array and timer
@@ -64,14 +64,7 @@ let timerID;
 
 
 //from landing page to start quiz
-let startBtn = document.querySelector('#start');
-startBtn.addEventListener('click', function(){
-    document.querySelector('.container').style.display='none';
-    document.querySelector('#finito').style.display='none';
-    document.querySelector('.highscores').style.display='none';
-    document.querySelector('#quest-answ').style.display='block';
 
-} )
 
 //start quiz
 
@@ -87,19 +80,40 @@ startBtn.addEventListener('click', function(){
 
 
 //function to loop through questions and options
-function nextQuestion(){
-    let thisQuestion = quizQuestions[thisQuestionIndex];
-    let h2Question = document.getElementById('question');
-    h2Question.textContent = thisQuestion.h2says;
-    answOptions.innerHTML = "";
-    thisQuestion.options.forEach(function(choice, i) {
-        let choiceBtn = document.createElement("button");
-        choiceBtn.setAttribute("value", choice);
-        choiceBtn.textContent = i + 1 + ". " + choice;
-        choiceBtn.onclick = ansewerClick;
-        answOptions.appendChild(choiceBtn);
-    });
-}
+// function nextQuestion(){
+//     let thisQuestion = quizQuestions[thisQuestionIndex];
+//     let h2Question = document.getElementById('question');
+//     h2Question.textContent = thisQuestion.h2says;
+//     answOptions.innerHTML = "";
+//     thisQuestion.options.forEach(function(choice, i) {
+//         let choiceBtn = document.createElement("button");
+//         choiceBtn.setAttribute("value", choice);
+//         choiceBtn.textContent = i + 1 + ". " + choice;
+//         choiceBtn.onclick = ansewerClick;
+//         answOptions.appendChild(choiceBtn);
+//     });
+// }
+//start quiz - new approach
+let startBtn = document.querySelector('#start');
+startBtn.addEventListener('click', function(){
+    document.querySelector('#starting-view').style.display='none';
+    document.querySelector('#finito').style.display='none';
+    document.querySelector('.highscores').style.display='none';
+    document.querySelector('#quest-answ').style.display='block';
+
+} )
+
+//function to get array into dive with buttons//
+
+
+
+
+
+
+
+
+let userAnsw = document.querySelector('.optansw');
+userAnsw.addEventListener.querySelector('click', ansewerClick);
 
 function ansewerClick() {
     if (this.value !== quizQuestions[thisQuestionIndex].answer) {
