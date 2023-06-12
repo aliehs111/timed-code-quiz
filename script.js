@@ -41,17 +41,17 @@ let quizQuestions = [
 
 //set up running list of global variables///
 let mainQuizEl = document.querySelector('#quest-answ');
-let answOptions = document.querySelector('.questcontainer');
+let answOptionsEl = document.querySelector('#options');
 let scoreEl = document.querySelector('#timer');
-let questionEl = document.querySelector('#question');
-let userSubmit = document.querySelector('#initials')
+let questionEl = document.querySelector('#pregunta');
+let userSubmit = document.querySelector('#nombre')
 let userInitials = document.querySelector('#enterinit')
-let quizResponse = document.querySelector('#quizresponse');
+let quizResponse = document.querySelector('#repuesta');
 let msgWrong = document.querySelector('#wrong');
 let msgCorrect = document.querySelector('#correct');
 let restart = document.querySelector('#restart');
 let clearScore = document.querySelector('#clear');
-let answOption = document.getElementById('quest-answ');
+let answOption = document.getElementById('pregunta');
 let timeEl = document.getElementById('time');
 
 //define starting point to reference indexes in quesiton array and timer
@@ -66,54 +66,33 @@ let timerID;
 //from landing page to start quiz
 
 
-//start quiz
-
-// function quizStart() {
-//     timerID = setInterval(outofTime, 1000);
-//     scoreEl.textContent = time;
-//     let firstViewEl = document.querySelector('.container');
-//     firstViewEl.setAttribute("class", "hide");
-//     mainQuizEl.removeAttribute("class");
-//     nextQuestion();
-
-// }
-
-
-//function to loop through questions and options
-// function nextQuestion(){
-//     let thisQuestion = quizQuestions[thisQuestionIndex];
-//     let h2Question = document.getElementById('question');
-//     h2Question.textContent = thisQuestion.h2says;
-//     answOptions.innerHTML = "";
-//     thisQuestion.options.forEach(function(choice, i) {
-//         let choiceBtn = document.createElement("button");
-//         choiceBtn.setAttribute("value", choice);
-//         choiceBtn.textContent = i + 1 + ". " + choice;
-//         choiceBtn.onclick = ansewerClick;
-//         answOptions.appendChild(choiceBtn);
-//     });
-// }
-//start quiz - new approach
 let startBtn = document.querySelector('#start');
 startBtn.addEventListener('click', function(){
-    document.querySelector('#starting-view').style.display='none';
+    document.querySelector('#principio').style.display='none';
     document.querySelector('#finito').style.display='none';
     document.querySelector('.highscores').style.display='none';
-    document.querySelector('#quest-answ').style.display='block';
-
+    document.querySelector('#pregunta').style.display='block';
+    // newQuestion();
 } )
 
-//function to get array into dive with buttons//
+//function to get array into div with buttons//
+function newQuestion(){
+    let thisQuestion = quizQuestions[thisQuestionIndex];
+    let askEl = document.getElementById('pregunta');
+    answOptionsEl.innerHTML = "";
+    thisQuestionIndex.options.any(choice, i);
+        let choiceBtn = document.createElement("button");
+        choiceBtn.setAttribute("value", choice);
+        choiceBtn.textContent = i + 1 + ". " + choice;
+        choiceBtn.onclick = ansewerClick;
+        answOptionsEl.appendChild(choiceBtn);
+    }
+
+        
 
 
-
-
-
-
-
-
-let userAnsw = document.querySelector('.optansw');
-userAnsw.addEventListener.querySelector('click', ansewerClick);
+// let userAnsw = document.querySelector('.optansw');
+// userAnsw.addEventListener.querySelector('click', ansewerClick);
 
 function ansewerClick() {
     if (this.value !== quizQuestions[thisQuestionIndex].answer) {
@@ -123,21 +102,21 @@ function ansewerClick() {
         }
         scoreEl.textContent = time;
         msgWrong.textContent = 'Wrong...need more practice!'
-        msgWrong.style.color = "red";
+        
     } else {
         msgCorrect.textContent = 'Correct! Great Job!'
-        msgCorrect.style.color = "blue";
+        
     }
 
     quizResponse.setAttribute("class", "quizresponse2");
     setTimeout(function() {
-        quizResponse.setAttribute("class", "quizresponse hide");
+        quizResponse.setAttribute("id", "repuesta hide");
     }, 2000);
     thisQuestionIndex++;
     if (thisQuestionIndex === quizQuestions.length) {
         quizEnd();
     } else {
-        nextQuestion();
+        newQuestion();
     }
 }
  //function to end quiz
@@ -153,7 +132,7 @@ function ansewerClick() {
   //function to end quiz if timer = 0
   function outofTime() {
     time--;
-    timerEl.textContent = time;
+    timeEl.textContent = time;
     if (time <= 0) {
         quizEnd();
     }

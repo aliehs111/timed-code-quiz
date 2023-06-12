@@ -38,7 +38,7 @@ h1 {
   right: 200px;
 }
 
-#starting-view {
+#principio, #finito {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +54,7 @@ h1 {
   text-align: center;
 }
 
-#quizresponse, .highscores {
+#highscores {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +71,7 @@ h1 {
 } */
 }
 
-#finito, #quest-answ {
+#finito, #pregunata {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,8 +87,14 @@ h1 {
   text-align: center;
 } */
 }
-
+#repuesta {
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+}
 h2 {
+  font-size: 40px;
+  color: midnightblue;
   padding-top: 200px;
   padding-left: 100px;
   /* float: left; */
@@ -128,9 +134,9 @@ p {
 }
 
 
-.quiz-container {
+/* #pregunta {
   display: none;
-}
+} */
 
 .correct {
   display: none;
