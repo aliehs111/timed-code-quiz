@@ -88,13 +88,9 @@ function newQuestion(){
         choiceBtn.onclick = ansewerClick;
         answOptionsEl.appendChild(choiceBtn);
     }
-  
-}      
-
-
-
+}   
 // let userAnsw = document.querySelector('.optansw');
-// userAnsw.addEventListener.querySelector('click', ansewerClick);
+// choiceBtn.addEventListener.querySelector('click', ansewerClick);
 
 function ansewerClick() {
     if (this.value !== quizQuestions[thisQuestionIndex].answer) {
@@ -164,5 +160,5 @@ function checkForEnter(event) {
     }
 };
 
-// userInitials.onkeyup = checkForEnter
+
 
