@@ -52,7 +52,7 @@ let msgCorrect = document.querySelector('#correct');
 let restart = document.querySelector('#restart');
 let clearScore = document.querySelector('#clear');
 let answOption = document.getElementById('pregunta');
-let timeEl = document.getElementById('time');
+let timeEl = document.getElementById('timer');
 
 //define starting point to reference indexes in quesiton array and timer
 
@@ -67,10 +67,10 @@ let timerID;
 
 let startBtn = document.querySelector('#start');
 startBtn.addEventListener('click', function(){
-    document.querySelector('#principio').style.display='none';
-    document.querySelector('#finito').style.display='none';
-    document.querySelector('#highscores').style.display='none';
-    document.querySelector('#pregunta').style.display='block';
+    document.querySelector('#quiz-start').style.display='none';
+    // document.querySelector('#finito').style.display='none';
+    // document.querySelector('#highscores').style.display='none';
+    document.querySelector('#pregunta').style.display='flex';
     newQuestion();
 } )
 
@@ -80,6 +80,7 @@ function newQuestion(){
     // let askEl = document.getElementById('pregunta');
     questionEl.innerHTML = thisQuestion;
     let theseAnswers = quizQuestions[thisQuestionIndex].options;
+    answOptionsEl.innerHTML="";
 
     for(let i = 0; theseAnswers.length > i; i++) {
         let choiceBtn = document.createElement("button");
@@ -93,12 +94,15 @@ function newQuestion(){
 // choiceBtn.addEventListener.querySelector('click', ansewerClick);
 
 function ansewerClick() {
+    msgWrong.innerHTML="";
+    msgCorrect.innerHTML="";
+
     if (this.value !== quizQuestions[thisQuestionIndex].answer) {
         time -= 10;
         if (time < 0) {
             time = 0;
         }
-        scoreEl.textContent = time;
+        timeEl.textContent = time;
         msgWrong.textContent = 'Wrong...need more practice!'
         
     } else {
