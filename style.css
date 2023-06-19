@@ -37,7 +37,7 @@ h1 {
   right: 300px; */
 }
 
-#principio, #finito {
+#principio {
   display: flex;
   margin:auto;
   flex-direction: column;
@@ -55,7 +55,7 @@ h1 {
 }
 
 #highscores {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -146,4 +146,10 @@ p {
   display: none
 }
 
+.hide {
+  display: none;
+}
 
+.show {
+  display: block;
+}
