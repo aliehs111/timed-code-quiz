@@ -44,8 +44,8 @@ let quizQuestions = [
 let answOptionsEl = document.querySelector('#options');
 let scoreEl = document.querySelector('#timer');
 let questionEl = document.querySelector('#question');
-let userSubmit = document.querySelector('#nombre')
-let userInitials = document.querySelector('#initials')
+let userSubmit = document.querySelector('#nombre');
+let userInitials = document.querySelector('#initials');
 let quizResponse = document.querySelector('#repuesta');
 let msgWrong = document.querySelector('#wrong');
 let msgCorrect = document.querySelector('#correct');
@@ -57,7 +57,7 @@ let timeEl = document.getElementById('timer');
 //define starting point to reference indexes in quesiton array and timer
 
 let thisQuestionIndex = 0;
-let time = quizQuestions.length * 1;
+let time = quizQuestions.length * 15;
 let timerID;
 
 
@@ -89,6 +89,9 @@ function startTimer() {
     }, 1000);
 }
 
+
+
+
 function stopTimer() {
     clearInterval(timerID)
 }
@@ -112,8 +115,6 @@ function newQuestion() {
 // choiceBtn.addEventListener.querySelector('click', ansewerClick);
 
 function ansewerClick() {
-    msgWrong.innerHTML = "";
-    msgCorrect.innerHTML = "";
 
     if (this.value !== quizQuestions[thisQuestionIndex].answer) {
         time -= 10;
@@ -121,7 +122,7 @@ function ansewerClick() {
             time = 0;
         }
       
-        msgWrong.textContent = 'Wrong...need more practice!'
+        msgWrong.textContent = 'Wrong...need more practice!'///these responses need to disappear with new question
 
     } else {
         msgCorrect.textContent = 'Correct! Great Job!'
@@ -144,6 +145,11 @@ function quizEnd() {
     principio.style.display="none";
     let endEl = document.getElementById('finito');
     endEl.style.display="block";
+    //////show final score on finito div span
+    let finalTime = getElementById('timer')
+    let showFinal = getElementById('score-final')
+    showFinal.innerHTML = finalTime.value;
+    //this is not working - want to show timer value as score///
     
     
 }
@@ -160,8 +166,8 @@ function saveScore() {
             initials: initials
         };
         highscores.push(newScore);
-        window.localStorage.setItem("highscores", JSON.stringify(highscores));
-        window.location.reload();
+        window.localStorage.getItem("highscores", JSON.stringify(highscores));
+        // window.location.reload();
     }
 }
 let saveIntBtn = document.getElementById('enterinit')
