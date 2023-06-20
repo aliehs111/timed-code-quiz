@@ -79,8 +79,8 @@ startBtn.addEventListener('click', function () {
 function startTimer() {
     timerID = setInterval(function () {
         time--
-        if (time<=0){
-            time=0
+        if (time <= 0) {
+            time = 0
             stopTimer();
             quizEnd();
         }
@@ -121,7 +121,7 @@ function ansewerClick() {
         if (time < 0) {
             time = 0;
         }
-      
+
         msgWrong.textContent = 'Wrong...need more practice!'///these responses need to disappear with new question
 
     } else {
@@ -142,22 +142,21 @@ function ansewerClick() {
 function quizEnd() {
     stopTimer();
     let principio = document.getElementById('principio')
-    principio.style.display="none";
+    principio.style.display = "none";
     let endEl = document.getElementById('finito');
-    endEl.style.display="block";
+    endEl.style.display = "block";
     //////show final score on finito div span
-    let finalTime = getElementById('timer')
-    let showFinal = getElementById('score-final')
-    showFinal.innerHTML = finalTime.value;
+    let finalTime = document.getElementById('timer')
+    let showFinal = document.getElementById('score-final')
+    showFinal.innerHTML = time;
+   
     //this is not working - want to show timer value as score///
-    
-    
+
 }
-
-
 
 function saveScore() {
     let initials = userInitials.value.trim();
+    console.log(initials);
     if (initials !== "") {
         let highscores =
             JSON.parse(window.localStorage.getItem("highscores")) || [];
@@ -166,7 +165,7 @@ function saveScore() {
             initials: initials
         };
         highscores.push(newScore);
-        window.localStorage.getItem("highscores", JSON.stringify(highscores));
+        window.localStorage.setItem("highscores", JSON.stringify(highscores));
         // window.location.reload();
     }
 }
