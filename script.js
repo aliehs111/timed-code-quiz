@@ -144,12 +144,12 @@ function quizEnd() {
     let principio = document.getElementById('principio')
     principio.style.display = "none";
     let endEl = document.getElementById('finito');
-    endEl.style.display = "block";
+    endEl.style.display = "flex";
     //////show final score on finito div span
     let finalTime = document.getElementById('timer')
     let showFinal = document.getElementById('score-final')
     showFinal.innerHTML = time;
-   
+
     //this is not working - want to show timer value as score///
 
 }

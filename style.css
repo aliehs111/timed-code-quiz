@@ -21,21 +21,13 @@ header {
   width: 100%;
   
 }
-.scores-header {
-  /* position:absolute;
-  top: 15px;
-  left: 20px; */
-}
 
 h1 {
-  font-size: 50px;
+  font-size: 70px;
+
 }
 
-#timer {
-  /* position:fixed;
-  top: 5px;
-  right: 300px; */
-}
+
 
 #principio {
   display: flex;
@@ -43,13 +35,12 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 50%;
   height: 70vh;
   background-color: khaki;
   border-style: solid;
   border: 16px;
   border-color: olive; 
-  /* border-radius: 10px; */
   text-align: center;
   padding: 5px;
 }
@@ -66,9 +57,7 @@ h1 {
   border-style: solid;
   border: 16px;
   border-color: olive; 
-  /* border-radius: 10px;
-  text-align: center;
-} */
+
 }
 
 #finito, #pregunta {
@@ -76,6 +65,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  vertical-align:bottom;
   width: 80vh;
   max-width: 80%;
   height: 70vh;
@@ -83,21 +73,26 @@ h1 {
   border-style: solid;
   border: 16px;
   border-color: olive; 
-  /* border-radius: 10px;
   text-align: center;
-} */
+
 }
+
+
+
+
 #repuesta {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   font-style: italic;
 }
 h2 {
-  font-size: 40px;
-  color: midnightblue;
-  padding-top: 200px;
-  padding-left: 100px;
-  /* float: left; */
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(28, 28, 102);
+  padding-top: 100px, 50px, 100px, 50px;
+  
+  
+ 
 }
 
 button, .gobackbtn {
@@ -110,7 +105,7 @@ button, .gobackbtn {
   text-decoration: none;
   line-height: 1;
   position: relative;
-  padding: 5px;
+  padding: 10px;
   background: #1abebf;
   background-image: linear-gradient(122deg,#37e0e0,#1abebe);
   background-size: 300px,300px,100%;
@@ -127,16 +122,26 @@ button, .gobackbtn {
 
 
 p {
-  padding: 25px;
-  color:steelblue; 
-  font-weight: 100;
+  padding: 50px;
+  color:steelblue;
+  font-weight:bold;
   font-style: italic;
 }
 
+.final {
+  padding: 10px;
+  color:midnightblue;
+  font-size: 20px;
+}
 
-/* #pregunta {
-  display: none;
-} */
+.finalsc {
+  font-size: 40px;
+  color: midnightblue;
+}
+
+#initials {
+  height: 30px;
+}
 
 .correct {
   display: none;
@@ -152,4 +157,12 @@ p {
 
 .show {
   display: block;
+}
+
+#enterinit {
+  display: flex;
+  padding: 20;
+  text-align: center;
+  margin: auto;
+  
 }
