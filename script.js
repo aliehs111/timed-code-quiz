@@ -115,6 +115,9 @@ function newQuestion() {
 // choiceBtn.addEventListener.querySelector('click', ansewerClick);
 
 function ansewerClick() {
+    // Clear previous response messages
+    msgWrong.textContent = '';
+    msgCorrect.textContent = '';
 
     if (this.value !== quizQuestions[thisQuestionIndex].answer) {
         time -= 10;
@@ -138,6 +141,16 @@ function ansewerClick() {
         newQuestion();
     }
 }
+
+///add a function with a conditional that stops the game if there are no more questions or the time is 0
+function stopGame() {
+    if (thisQuestionIndex === quizQuestions.length || time === 0) {
+        quizEnd();
+    } else {
+        newQuestion();
+    }
+}
+
 //function to end quiz
 function quizEnd() {
     stopTimer();
