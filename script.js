@@ -179,12 +179,15 @@ function saveScore() {
         };
         highscores.push(newScore);
         window.localStorage.setItem("highscores", JSON.stringify(highscores));
-        // window.location.reload();
+        redirectToHighScores(); // Call the function to redirect and scroll
     }
 }
 let saveIntBtn = document.getElementById('enterinit')
 
 saveIntBtn.addEventListener('click', saveScore);
+function redirectToHighScores() {
+    window.location.href = "highscore.html#highscores"; // Redirect to highscore.html and add a fragment identifier
+}
 
 
 
