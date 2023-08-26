@@ -37,7 +37,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 80vh;
   height: 70vh;
   background-color: khaki;
   border-style: solid;
@@ -50,6 +50,7 @@ h1 {
 
 #highscores {
   display: flex;
+  margin:auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -66,10 +67,11 @@ h1 {
 
 #finito, #pregunta {
   display: none;
+  margin:auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  vertical-align:bottom;
+  vertical-align:initial;
   width: 80vh;
   max-width: 80%;
   height: 70vh;
@@ -78,7 +80,6 @@ h1 {
   border: 16px;
   border-color: olive; 
   text-align: center;
-  margin-top: 60px;
   border-radius: 8%;
 
 }
