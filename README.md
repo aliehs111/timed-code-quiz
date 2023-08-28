@@ -8,6 +8,7 @@ The quiz is designed with questions related to javaScript code.  The object is t
  - Local Storage is used so that the user can save their score with their initials and a running list of high scores per user initials is stored and displayed.
  - Text for questions is kept in an array and new sets of questions and answer options appear when each question is answered.
  ## Screenshot and Link
- ![Screenshot 2023-06-12 at 10 08 29 PM](https://github.com/aliehs111/timed-code-quiz/assets/128503077/1ebf3aba-114d-4794-8e57-80abac55805b)
+![Alt text](assets/Screenshot%202023-08-28%20at%2010.45.14%20AM.png)
+Link: https://github.com/aliehs111/timed-code-quiz
 
  
